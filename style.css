@@ -1,0 +1,144 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	--sp-color: 228 187 47;
+	background-color: rgb(var(--sp-color) / .2);
+	transition: .4s ease-in-out;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+header {
+	line-height: 6rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 4rem;
+	max-height: 6rem;
+}
+
+.logo img {
+	max-width: 4rem;
+	vertical-align: middle;
+}
+
+header ul {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+header ul li a {
+	color: #333;
+	text-decoration: none;
+	font-size: 1.3em;
+	margin: 0 2.5rem;
+	transition: .2s ease-in-out;
+}
+
+header ul li a:hover {
+	color: rgb(var(--sp-color));
+	font-weight: 500;
+}
+
+section {
+	min-height: calc(100vh - 6rem - 4rem);
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+	overflow: hidden;
+}
+
+.content {
+	padding: 8rem;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.content .section-title {
+	font-size: 4.3em;
+}
+
+.content .section-title span {
+	color: rgb(var(--sp-color));
+	transition: .4s ease-in-out;
+}
+
+.content .section-para {
+	max-width: 25rem;
+	margin: 1rem 0;
+	font-size: 1.3em;
+}
+
+section .banner-img {
+	width: auto;
+	height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.banner-img::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: rgb(var(--sp-color));
+	z-index: -1;
+	border-radius: 50%;
+	transform: translate(5%, -25%) scale(.7);
+	aspect-ratio: 1;
+	transition: .2s ease-in-out;
+}
+
+.banner-img:has(.out)::before {
+	transform: translate(100%, -25%) scale(1);
+	transition: .3s ease-in-out;
+}
+
+.banner-img img {
+	transform: translate(0);
+	width: 500px;
+	margin: 0 auto;
+	transition: .4s ease-in-out;
+}
+
+.banner-img .out {
+	transform: translate(200%) rotate(30deg);
+	transition: .1s ease-in-out;
+}
+
+footer {
+	max-height: 2rem;
+	padding: .5rem 1rem;
+	line-height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 0 3rem;
+	font-weight: 700;
+	font-size: 1.3em;
+}
+
+.slider {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.slider img {
+	max-width: 40px;
+	margin: 0 3rem;
+	padding: 0 20px;
+	cursor: pointer;
+}
